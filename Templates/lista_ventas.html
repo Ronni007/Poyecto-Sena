@@ -1,0 +1,51 @@
+{% extends "layouts/app.html" %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+
+{% block titulo %} <title> Lista de ventas</title> {% endblock titulo %} <title> Lista de ventas</title>
+
+{% block content %} <h1> Listado de ventas </h1> {% endblock content %}
+
+
+{% block lista_ventas %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Asesor</th>
+                <th>NIT</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for venta in ventas %}
+                <tr>
+                    <td>{{ venta.id }}</td>
+                    <td>{{ venta.producto.nombre }}</td>
+                    <td>{{ venta.asesor.codigo }}</td>
+                    <td>{{ venta.nit_cliente.nit }}</td>
+                    <td>{{ venta.fecha }}</td>
+                    <td>
+                        <form id="form-eliminar-{{ venta.id }}" method="post" action="{% url 'eliminar_venta' venta.id %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="venta_id" value="{{ venta.id }}">
+                            <button type="button" onclick="confirmarEliminar({{ venta.id }})">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        function confirmarEliminar(ventaId) {
+            if (confirm('¿Estás seguro de que quieres eliminar esta venta?')) {
+                document.getElementById('form-eliminar-' + ventaId).submit();
+            }
+        }
+    </script>
+{% endblock lista_ventas %}

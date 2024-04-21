@@ -1,0 +1,31 @@
+{% extends "layouts/app.html" %}
+
+{% block  title %}
+<title> Iniciar sesion </title>
+{% endblock title %}
+
+{% block content %}<h1>Iniciar sesion</h1>{% endblock content %}
+<br>
+
+{% block login %}
+<div >
+<br>
+<form method="post" action="{% url 'login_view' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+    </div>
+    <br>
+    <button type="submit">Iniciar sesión</button>
+</form>
+</div>
+{% endblock login %}
+
+
+

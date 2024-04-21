@@ -1,0 +1,15 @@
+{% extends "layouts/app.html" %}
+
+
+{% block titulo %} <title> Registrar venta </title> {% endblock titulo %}
+
+{% block content %}   <h1>Registrar Nueva Venta</h1>  {% endblock content %}
+
+
+{% block registrar_venta %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Venta</button>
+    </form>
+{% endblock registrar_venta %}

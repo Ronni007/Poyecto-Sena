@@ -1,0 +1,98 @@
+*{
+margin: 0;
+box-sizing: border-box;
+}
+
+body{
+  background: #7289b6;
+  font-family: sans-serif;
+}
+
+.contenedor {
+  min-width: 100%;
+  text-align: center;
+}
+
+.logo-index{
+  width: 300px;
+  text-align: center;
+}
+
+.menu-index{
+  background: #000000;
+  font-family: sans-serif;
+  background-image: url('/static/images/fondo1.png');
+  filter: grayscale(20%);
+  background-repeat: no-repeat;
+  background-position: 50% 20%;
+
+}
+
+/* Estilos para el menú de navegación */
+.nav-menu {
+    background-color: #8e8b8b;
+    padding: 10px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+
+/* Estilos para los elementos del menú */
+.menu-item {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Estilos para los enlaces del menú */
+.menu-link {
+    color: #080808;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+/* Estilos para los enlaces del menú al pasar el mouse sobre ellos */
+.menu-link:hover {
+    color: #e7d04e;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+
+/* Diseño cuadricula lista ventas */
+
+/* Estilos para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Estilos para las celdas de la tabla */
+table, th, td {
+  border: 1px solid rgb(210, 26, 155);
+  padding: 8px;
+}
+
+/* Estilos para el encabezado de la tabla */
+th {
+  background-color: #69bd56;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Estilos para las celdas de datos */
+td {
+  text-align: left;
+}
+
+/* Estilos para resaltar el enlace de editar */
+a {
+  color: rgb(18, 17, 18);
+  text-decoration: underline;
+}
+

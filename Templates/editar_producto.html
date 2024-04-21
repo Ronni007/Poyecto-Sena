@@ -1,0 +1,15 @@
+{% extends "layouts/app.html" %}
+
+
+{% block titulo %} <title> Editar producto </title> {% endblock titulo %}
+
+{% block content %}   <h1>Editar productos</h1>  {% endblock content %}
+
+
+{% block editar_producto %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Cambios</button>
+    </form>
+{% endblock editar_producto %}

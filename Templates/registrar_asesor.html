@@ -1,0 +1,15 @@
+{% extends "layouts/app.html" %}
+
+{% block titulo %} <title> Registrar asesor </title> {% endblock titulo %}  
+
+{% block content %} <h1>Registrar Nuevo asesor</h1> {% endblock content %}
+
+
+
+{% block registrar_asesor %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Asesor</button>
+    </form>
+{% endblock registrar_asesor %}

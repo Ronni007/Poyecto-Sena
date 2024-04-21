@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+{% block title %}{% endblock title %}
+  </head>
+  
+  <body style="background-color: #7289b6;">
+    {% include "layouts/partials/menu.html" %}
+    <header class="logo">
+      <img src="{% static '/images/fondo1.png/' %}" alt="Logo" class="logo">
+    </header>
+    <main>
+      {% block content %}              {% endblock content %}
+      {% block login %}       {% endblock login %}
+      {% block registrar_producto %}   {% endblock registrar_producto %}
+      {% block lista_producto %}       {% endblock lista_producto %}
+      {% block articulo %}             {% endblock articulo %}
+      {% block registrar_venta %}      {% endblock registrar_venta %}
+      {% block registrar_cliente %}    {% endblock registrar_cliente %}
+      {% block registrar_asesor %}     {% endblock registrar_asesor %}
+      {% block lista_ventas %}         {% endblock lista_ventas %}
+      {% block editar_venta %}         {% endblock editar_venta %}
+      {% block eliminar_venta %}       {% endblock eliminar_venta %}
+      {% block eliminar_producto %}    {% endblock eliminar_producto %}
+      {% block inicio %}               {% endblock inicio %}
+      {% block editar_producto %}      {% endblock editar_producto %}
+    <main/>
+  </body>
+</html>
